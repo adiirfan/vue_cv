@@ -7,8 +7,13 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
+    "eagle.js": "^0.4.1",
     "vue": "^2.5.17",
+    "vue-masonry": "^0.11.6",
+    "vue-radial-progress": "^0.2.10",
     "vue-router": "^3.0.1",
+    "vue2-circle-progress": "^1.2.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
