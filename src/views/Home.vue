@@ -105,7 +105,7 @@
                     </div>
                 </eg-modal>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp' :steps=2>
+            <slide enter='bounceInDown' leave='bounceOutDown' :steps=2>
                 <h3 class="second-title">Pendidikan 👨‍🎓</h3>
                 <div style="overflow-y: scroll;overflow:visible" >
                     <div class="card" v-for="(item,key) in pendidikan" v-bind:key="key" @click="opendetail(item)">
@@ -125,7 +125,11 @@
             <slide enter='bounceInUp' leave='bounceOutUp'>
                 <h3 class="second-title">Skill 🏃</h3>
                 <div class="columns">
-                    <h4 class="subtitle">Pemrograman 👨‍💻</h4>
+                    <div class="column">
+                        <h4 class="subtitle">Pemrograman 👨‍💻</h4>
+                    </div>
+                </div>
+                <div class="columns">
                     <div class="column center">
                         <radial-progress-bar :diameter="200"
                                              :completed-steps="8.5"
@@ -148,7 +152,7 @@
                                              :total-steps="10">
                             <h4>88%</h4>
                         </radial-progress-bar>
-                        <p>JS</p>
+                        <p>JavaScript</p>
                     </div>
                     <div class="column center">
                         <radial-progress-bar :diameter="200"
@@ -179,35 +183,46 @@
                         </radial-progress-bar>
                         <p>Dev Tool</p>
                     </div>
+                    <div class="column center">
 
+                    </div>
                 </div>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp'>
+            <slide enter='bounceInUp' leave='bounceOutRight'>
                 <h3 class="second-title">Skill  🏃</h3>
                 <div class="columns">
-                    <h4 class="subtitle">Pemrograman 👨‍💻</h4>
-                    <p>HTML : HTML5</p>
-                    <p>CSS : CSS3, SCSS</p>
-                    <p>JS : Vanilla JS, Vue JS, Ajax, Axios, Express JS,Nuxt JS,dll</p>
-                    <p>PHP : PHP 7.1, native, framework CI, laravel,dll </p>
-                    <p>DB : MySQL, MongoDB </p>
-                    <p>Dev Tool : npm, yarn, artisan, git,dll </p>
+                    <div class="column">
+                        <h4 class="subtitle">Pemrograman 👨‍💻</h4>
+                        <p>HTML : HTML5</p>
+                        <p>CSS : CSS3, SCSS</p>
+                        <p>JS : Vanilla JS, Vue JS, Axios, Express JS,Nuxt JS,dll</p>
+                        <p>PHP : PHP 7.1, native, framework CI, laravel,dll </p>
+                        <p>DB : MySQL, MongoDB </p>
+                        <p>Dev Tool : npm, yarn, artisan, git,dll </p>
+                    </div>
                 </div>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp'>
+            <slide enter='bounceInRight' leave='bounceOutRight'>
                 <h3 class="second-title">Skill  🏃</h3>
                 <div class="columns">
-                    <h4 class="subtitle">Bahasa 🙋‍️</h4>
-                    <p>Bahasa,English,Bahasa Jawa</p>
-                    <h4 class="subtitle">Personal Skill 🕵️</h4>
-                    <div class="columns">
-                        <div class="column center">
-                            <radial-progress-bar :diameter="200"
+                    <div class="column">
+                        <h4 class="subtitle">Bahasa 🙋‍️</h4>
+                        <p>Bahasa,English,Bahasa Jawa</p>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <h4 class="subtitle">Personal Skill 🕵️</h4>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column center">
+                        <radial-progress-bar :diameter="200"
                                                  :completed-steps="9"
                                                  :total-steps="10">
                                 <h4>90%</h4>
-                            </radial-progress-bar>
-                            <p>Problem Solve</p>
+                        </radial-progress-bar>
+                        <p>Problem Solve</p>
                         </div>
                         <div class="column center">
                             <radial-progress-bar :diameter="200"
@@ -234,19 +249,20 @@
                             <p>Innovasi</p>
                         </div>
                     </div>
-                </div>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp'>
+            <slide enter='bounceInLeft' leave='bounceOutLeft'>
                 <h3 class="second-title">Skill  🏃</h3>
                 <div class="columns">
+                    <div class="column">
                     <h4 class="subtitle">Hobby ⛹️</h4>
                     <p>Game</p>
                     <p>Rakit PC</p>
                     <p>Basket</p>
                     <p>dan lain lain</p>
+                    </div>
                 </div>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp' :steps=2>
+            <slide enter='bounceInRight' leave='bounceOutRight' :steps=2>
                 <h3 class="second-title">Tunggu Sebentar!!  🖐️</h3>
                 <div class="columns">
                     <p class="subtitle">Kita rehat sebentar dengan gambar" imut ini</p>
@@ -260,6 +276,20 @@
                     <p  v-if='step >= 2'> Lanjut? Lets Go  🏃 </p>
                 </eg-transition>
             </slide>
+            <slide enter='bounceInLeft' leave='bounceOutRight' :steps=2 :mouseNavigation='false'>
+                <h3 class="second-title">Portofolio  🖐️</h3>
+                <eg-transition enter='bounceInLeft' leave='bounceOutLeft'>
+                    <portofolio  v-if='step >= 2'/>
+                </eg-transition>
+            </slide>
+            <slide enter='bounceInRight' leave='bounceOutLeft'  :mouseNavigation='false'>
+                <h3 class="second-title">Katakan Haloo 🖐️</h3>
+                <credit/>
+            </slide>
+            <slide enter='bounceInRight' leave='bounceOutLeft' :mouseNavigation='false'>
+                <h4 class="second-title center">Sekian Dulu perkenalannya {{username}} 🖐️</h4>
+                <end/>
+            </slide>
         </div>
     </div>
 </template>
@@ -267,6 +297,9 @@
 <script>
     import eagle from 'eagle.js'
     import RadialProgressBar from 'vue-radial-progress'
+    import portofolio from '@/components/portofolio'
+    import credit from '@/components/credit'
+    import end from '@/components/end'
     export default {
         mixins: [ eagle.slideshow ],
         infos: {
@@ -334,61 +367,6 @@
                         Tahun : "2008-2011",
                     }
                 ],
-                portofolio:[
-                    {
-                        nama:'Permaisuri Online Store',
-                        url:'http://online.permaisuri.com/en/',
-                    },
-                    {
-                        nama:'Aston Hotel International',
-                        url:'https://www.astonhotelsinternational.com/id',
-                    },
-                    {
-                        nama:'AKR',
-                        url:'http://akr.co.id',
-                    },
-                    {
-                        nama:'Astra International',
-                        url:'https://astra.co.id/en/',
-                    },
-                    {
-                        nama:'vMap (Education Cloud)',
-                        url:'http://adiirfan.esy.es/vmap/',
-                    },
-                    {
-                        nama:'Kredito',
-                        url:'https://kredito.id',
-                    },
-                    {
-                        nama:'Belaundry',
-                        url:'-',
-                    },
-                    {
-                        nama:'Ragnarok Rush',
-                        url:'https://rush.gravindo.id/',
-                    },
-                    {
-                        nama:'Crossfire Next',
-                        url:'https://cfnext.lytogame.com/',
-                    },
-                    {
-                        nama:'Antar (Cancel)',
-                        url:'https://antarproadi.firebaseapp.com/#/'
-                    },
-                    {
-                        nama:'Lyto Internal Portal Video',
-                        url:'https://videoproadi.firebaseapp.com/'
-                    },
-                    {
-                        nama:'Raja Travel (On Progress)',
-                        url:'https://testing-2e5c6.firebaseapp.com/'
-                    },
-                    {
-                        nama:'Raja Travel Mobile Web (On Progress)',
-                        url:'https://industrial-net-642.firebaseapp.com/#/flight'
-                    },
-
-                ],
                 imut:[
                     {
                         url:'https://media.giphy.com/media/WYEWpk4lRPDq0/giphy.gif',
@@ -408,7 +386,10 @@
             }
         },
         components: {
-            RadialProgressBar
+            RadialProgressBar,
+            portofolio,
+            credit,
+            end
         },
         mounted(){
             var x = new Date().getFullYear();
@@ -432,6 +413,8 @@
         .eg-slideshow{
             font-family: 'Coming Soon';
             background-color: white;
+            right: 0px;
+            top: 0px;
             .eg-slide{
                 .eg-slide-content{
                     width: 25em;
@@ -499,6 +482,14 @@
         }
         .imut{
             width:100%;
+        }
+        @media only screen and (max-width: 700px) {
+            .column{
+                width:100%;
+                float:left;
+                text-align: center;
+                min-height: 10px;
+            }
         }
     }
 
