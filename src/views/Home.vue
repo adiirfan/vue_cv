@@ -53,28 +53,26 @@
                 </eg-modal>
             </slide>
             <slide :steps=2 enter='bounceInRight' leave='bounceOutRight'>
+
                 <h3 class="second-title">Profil Diri 👨</h3>
-                <table>
-                    <tr>
-                        <td>
-                            <img src="@/assets/photo.jpg" class="photodiri"/>
-                        </td>
-                        <td>
-                            <p>Nama  : Adi Irfan Safrudin</p>
-                            <p>Lahir : Malang,30 April 1996 (🐂)</p>
-                            <p>Agama : Islam</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">Alamat:
-                            <a href="https://www.google.com/maps/dir//-6.3460378,106.7437117/@-6.3460947,106.7434431,20z" target="_blank">
-                                Perumahan Bukit Pamulang Indah Blok A3/6 Pamulang Timur,Pamulang,Tangsel</a><br>
-                            Tinggi : 179 cm / 5 ft 10 inch<br>
-                            Berat  : 83 kg / 182 lbs<br>
-                            Golongan Darah : B
-                        </td>
-                    </tr>
-                </table>
+                <div class="columns">
+                    <div class="column">
+                        <img src="@/assets/photo.jpg" class="photodiri"/>
+                    </div>
+                    <div class="column">
+                        <p>Nama  : Adi Irfan Safrudin</p>
+                        <p>Lahir : Malang,30 April 1996 (🐂)</p>
+                        <p>Agama : Islam</p>
+                    </div>
+                </div>
+                <div class="columns">
+                    <a href="https://www.google.com/maps/dir//-6.3460378,106.7437117/@-6.3460947,106.7434431,20z" target="_blank">
+                        Perumahan Bukit Pamulang Indah Blok A3/6 Pamulang Timur,Pamulang,Tangsel</a><br>
+                    Tinggi : 179 cm / 5 ft 10 inch<br>
+                    Berat  : 83 kg / 182 lbs<br>
+                    Golongan Darah : B
+                </div>
+
                 <p  v-if='step >= 2'> Next Untuk Pengalaman Pekerjaan </p>
             </slide>
             <slide enter='bounceInUp' leave='bounceOutUp'>
