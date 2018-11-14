@@ -8,10 +8,10 @@
                 <div class="tile is-5 is-vertical is-parent">
                     <div class="tile is-child box center ">
                         <p class="title"></p>
-                        <p class="test"> Adi Irfan </p>
+                        <p class="test"> Adi Irfan Safrudin</p>
                     </div>
-                    <div class="tile is-child box center">
-                        <h1 class="title test">DATA<br>DIRI.</h1>
+                    <div class="tile is-child box profile">
+                        <h1 class="title test">TENTANG SAYA</h1>
                     </div>
                 </div>
                 <div class="tile is-parent " id="photo" @click="opendetails">
@@ -22,10 +22,56 @@
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-parent ">
-                    <article class="tile is-child box">
-                        <p class="title test">Main column</p>
-                        <p class="subtitle test">With some content</p>
+                    <article class="tile is-child box center">
+                        <h3 class="title test">PEKERJAAN</h3>
+                        <p class="subtitle test "></p>
                     </article>
+                </div>
+                <div class="tile is-parent ">
+                    <article class="tile is-child box center">
+                        <h3 class="title test">PENDIDIKAN</h3>
+                        <p class="subtitle test center"></p>
+                    </article>
+                </div>
+                <div class="tile is-parent ">
+                    <article class="tile is-child box center">
+                        <h3 class="title test">SKILLS</h3>
+                    </article>
+                </div>
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-3 is-vertical is-parent">
+                    <div class="tile is-child box center gifone ">
+
+                    </div>
+                    <div class="tile is-child box center">
+                        <h1 class="title test underline"><i class="fas fa-map-marker-alt fa-lg"></i></h1>
+                    </div>
+                </div>
+                <div class="tile is-parent" @click="opendetails">
+                    <div class="tile is-child box ripple center" >
+                        <h1 class="title test">PORTOFOLIO</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent" @click="opendetails">
+                    <div class="tile is-child box center" >
+                        <h1 class="title test">RF ONLINE <br></h1>
+                        <p class="subtitle"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-6 is-vertical is-parent">
+                    <div class="tile is-child box center">
+                        <h1 class="title test">RF ONLINE</h1>
+                    </div>
+                </div>
+                <div class="tile is-parent" @click="opendetails">
+                    <div class="tile is-child box ripple center" >
+                        <h1 class="title test">PORTOFOLIO</h1>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,7 +79,6 @@
 </template>
 
 <script>
-    import anime from 'animejs'
     import detaile from '@/components/details'
     import { mapState } from 'vuex'
     export default {
@@ -67,10 +112,11 @@
     @import url(https://fonts.googleapis.com/css?family=Noto+Sans);
     #mobile{
         font-family: 'Noto Sans', sans-serif;
+        font-size:.9rem;
     }
     .box {
         background-color: #fff;
-        border-radius: 3px;
+        border-radius: 8px;
         box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
         color: #4a4a4a;
         display: block;
@@ -116,10 +162,24 @@
         0%   {left:0px; top:10px;opacity:0;animation-timing-function: linear;}
         100% {left:0px; top:0px;opacity:1;animation-timing-function: linear;}
     }
-    .center{
+    .profile{
         display:flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         text-align: left;
+    }
+    .center{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .underline{
+        text-decoration: underline;
+    }
+    .gifone{
+        background-image: url("https://media.giphy.com/media/I0MnQSOgLotk4/giphy.gif");
+        background-size:cover;
+        min-height:50px;
     }
 </style>
