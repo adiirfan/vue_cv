@@ -32,7 +32,6 @@
 </template>
 
 <script>
-    import 'bulma/css/bulma.min.css'
     export default {
         name: "credit",
         data(){

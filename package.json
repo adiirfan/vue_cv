@@ -15,6 +15,7 @@
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.17",
     "vue-masonry": "^0.11.6",
+    "vue-mq": "^0.2.1",
     "vue-radial-progress": "^0.2.10",
     "vue-router": "^3.0.1",
     "vue2-circle-progress": "^1.2.3",

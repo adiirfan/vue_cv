@@ -6,10 +6,20 @@ import 'animate.css'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueMq from 'vue-mq'
+
 
 Vue.use(VTooltip)
 Vue.use(Eagle)
 Vue.config.productionTip = false
+
+Vue.use(VueMq, {
+    breakpoints: {
+        mobile: 768,
+        tablet: 1023,
+        desktop: Infinity,
+    }
+})
 
 new Vue({
   router,
