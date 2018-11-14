@@ -1,17 +1,20 @@
 <template>
     <div id="mobile">
-        <div v-if="details">
+        <div v-if="detaile">
             <detaile/>
         </div>
         <div v-else class="container is-mobile">
             <div class="tile is-ancestor">
                 <div class="tile is-5 is-vertical is-parent">
-                    <div class="tile is-child box">
+                    <div class="tile is-child box center ">
                         <p class="title"></p>
-                        <p> {{test}}</p>
+                        <p class="test"> Adi Irfan </p>
+                    </div>
+                    <div class="tile is-child box center">
+                        <h1 class="title test">DATA<br>DIRI.</h1>
                     </div>
                 </div>
-                <div class="tile is-parent " id="photo">
+                <div class="tile is-parent " id="photo" @click="opendetails">
                     <div class="tile is-child box photoframe ripple" >
                         <!--img src="@/assets/photo.jpg" class="photo" /-->
                     </div>
@@ -20,8 +23,8 @@
             <div class="tile is-ancestor">
                 <div class="tile is-parent ">
                     <article class="tile is-child box">
-                        <p class="title">Main column</p>
-                        <p class="subtitle">With some content</p>
+                        <p class="title test">Main column</p>
+                        <p class="subtitle test">With some content</p>
                     </article>
                 </div>
             </div>
@@ -32,37 +35,26 @@
 <script>
     import anime from 'animejs'
     import detaile from '@/components/details'
+    import { mapState } from 'vuex'
     export default {
         name: "Mobile",
         data(){
             return{
                 test: '',
                 zoom: false,
-                details:true,
             }
         },
+        computed: mapState([
+            'detaile'
+        ]),
         mounted(){
-            var myElement = document.getElementById('photo');
-            const hammer = new Hammer(myElement)
-            hammer.on('tap', (ev) => {
-                this.anime()
-            })
-            hammer.on('swipeleft', () => {
-                this.test = 'swipe left'
-            })
+            ScrollReveal({ duration: 1000 })
+            ScrollReveal().reveal('.tile')
         },
         methods:{
-            anime(){
-                anime({
-                    targets: '#photo .tile',
-                    scale: {
-                        value: 2,
-                        duration: 800,
-                        delay: 100,
-                        easing: 'easeInOutQuart'
-                    },
-                    delay: 250 // All properties except 'scale' inherit 250ms delay
-                });
+            opendetails(){
+                var data = "test123"
+                this.$store.commit('opendetails',data)
             },
         },
         components:{
@@ -105,5 +97,29 @@
         background-color: #fff;
         background-size: 100%;
         transition: background 0s;
+    }
+    .test {
+        -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+        animation-name: example;
+        animation-duration: 1s;
+    }
+
+    /* Safari 4.0 - 8.0 */
+    @-webkit-keyframes example {
+        0%   {left:0px; top:10px;opacity:0;animation-timing-function: linear;}
+        100% {left:0px; top:0px;opacity:1;animation-timing-function: linear;}
+    }
+
+    /* Standard syntax */
+    @keyframes example {
+        0%   {left:0px; top:10px;opacity:0;animation-timing-function: linear;}
+        100% {left:0px; top:0px;opacity:1;animation-timing-function: linear;}
+    }
+    .center{
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
     }
 </style>
