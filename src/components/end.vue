@@ -11,10 +11,11 @@
             </div>
         </section>
         <div class="columns">
-            <div class="column">
+            <div class="column has-text-centered">
                 <p>Terima Kasih,Matur Nuwun,Thank You,Arigatou,Hatur Nuhun<br>
                 sudah mau berkenalan dengan saya,semoga kita bisa berjumpa lagi 👊</p><br>
                 <img src="https://media.giphy.com/media/IcGkqdUmYLFGE/giphy.gif"/>
+
             </div>
         </div>
     </div>
@@ -27,5 +28,7 @@
 </script>
 
 <style scoped>
-
+    .has-text-centered{
+        text-align: center;
+    }
 </style>

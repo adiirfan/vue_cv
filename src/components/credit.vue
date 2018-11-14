@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column" v-for="(item,key) in social" v-bind:key="key">
+            <div class="column has-text-centered" v-for="(item,key) in social" v-bind:key="key">
                 <a :href="item.link" target="_blank">
                     <img :src="item.gambar" style="max-width:100px;"/>
                 </a>
@@ -18,14 +18,13 @@
             </div>
         </div>
         <div class="columns">
-            <div class="column" v-for="(item,key) in contact" v-bind:key="key">
+            <div class="column has-text-centered" v-for="(item,key) in contact" v-bind:key="key">
                 <img :src="item.gambar" style="max-width:100px;width:100%"/>
                 <p>{{item.details}}</p>
             </div>
-        </div>
-        <div class="columns">
-            <div class="column">
-                <img src="https://media.giphy.com/media/Cmr1OMJ2FN0B2/giphy.gif" style="max-width:200px;"/>
+            <div class="column has-text-centered">
+                <img src="https://media.giphy.com/media/Cmr1OMJ2FN0B2/giphy.gif" style="max-width:100px;"/>
+                <p>Silaturahmi</p>
             </div>
         </div>
     </div>
@@ -39,22 +38,22 @@
                 social:[
                     {
                         nama:"facebook",
-                        link:'www.facebook.com/adiirfan01',
+                        link:'http://www.facebook.com/adiirfan01',
                         gambar:'./assets/sociallogo/fb.svg'
                     },
                     {
                         nama:"LinkedIn",
-                        link:'www.linkedin.com/in/adi-irfan01',
+                        link:'http://www.linkedin.com/in/adi-irfan01',
                         gambar:'./assets/sociallogo/in.png'
                     },
                     {
                         nama:"GitHub",
-                        link:'www.github.com/adiirfan/',
+                        link:'http://www.github.com/adiirfan/',
                         gambar:'./assets/sociallogo/github.png'
                     },
                     {
                         nama:"Instagram",
-                        link:'www.instagram.com/irfans01',
+                        link:'http://www.instagram.com/irfans01',
                         gambar:'./assets/sociallogo/insta.png'
                     }
                 ],
@@ -76,5 +75,7 @@
 </script>
 
 <style scoped>
-
+    .has-text-centered{
+        text-align: center;
+    }
 </style>

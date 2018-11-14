@@ -60,17 +60,19 @@
                         <img src="@/assets/photo.jpg" class="photodiri"/>
                     </div>
                     <div class="column">
-                        <p>Nama  : Adi Irfan Safrudin</p>
-                        <p>Lahir : Malang,30 April 1996 (🐂)</p>
-                        <p>Agama : Islam</p>
+                        <p>Adi Irfan Safrudin<br>
+                            Malang,30 April 1996 (🐂)<br>
+                            Islam<br>
+                            179 cm<br>
+                            83kg
+                        </p>
                     </div>
                 </div>
                 <div class="columns">
+                    <div class="column has-text-left">
                     <a href="https://www.google.com/maps/dir//-6.3460378,106.7437117/@-6.3460947,106.7434431,20z" target="_blank">
                         Perumahan Bukit Pamulang Indah Blok A3/6 Pamulang Timur,Pamulang,Tangsel</a><br>
-                    Tinggi : 179 cm / 5 ft 10 inch<br>
-                    Berat  : 83 kg / 182 lbs<br>
-                    Golongan Darah : B
+                    </div>
                 </div>
 
                 <p  v-if='step >= 2'> Next Untuk Pengalaman Pekerjaan </p>
@@ -121,12 +123,7 @@
                 </eg-modal>
             </slide>
             <slide enter='bounceInUp' leave='bounceOutUp'>
-                <h3 class="second-title">Skill 🏃</h3>
-                <div class="columns">
-                    <div class="column">
-                        <h4 class="subtitle">Pemrograman 👨‍💻</h4>
-                    </div>
-                </div>
+                <h3 class="second-title">Skill 🏃 👨‍💻</h3>
                 <div class="columns">
                     <div class="column center">
                         <radial-progress-bar :diameter="200"
@@ -411,6 +408,7 @@
         .eg-slideshow{
             font-family: 'Coming Soon';
             background-color: white;
+            font-size:2rem;
             right: 0px;
             top: 0px;
             .eg-slide{
@@ -452,7 +450,8 @@
             background-color: rgba(0,0,0,.9);
         }
         .photodiri{
-            max-width:300px;
+            width:100%;
+            max-width:100%;
         }
         .card{
             border: 2px black solid;
@@ -466,28 +465,14 @@
         .subs{
             font-size:1.3rem;
         }
-        .column{
-            width:25%;
-            float:left;
-            text-align: center;
-            min-height: 10px;
-        }
-        .columns{
-            width:100%;
-        }
         .slice{
             position:relative !important;
         }
         .imut{
             width:100%;
         }
-        @media only screen and (max-width: 700px) {
-            .column{
-                width:100%;
-                float:left;
-                text-align: center;
-                min-height: 10px;
-            }
+        .has-text-centered{
+            text-align: center;
         }
     }
 
