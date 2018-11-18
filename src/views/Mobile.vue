@@ -56,21 +56,21 @@
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-parent" @click="opendetails">
-                    <div class="tile is-child box center" >
-                        <h1 class="title test">RF ONLINE <br></h1>
+                    <div class="tile is-child box center rf">
+                        <h2 class="title test">RF Online<br></h2>
                         <p class="subtitle"></p>
                     </div>
                 </div>
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-6 is-vertical is-parent">
-                    <div class="tile is-child box center">
-                        <h1 class="title test">RF ONLINE</h1>
+                    <div class="tile is-child box center rush">
+                        <h3 class="title test">Ragnarok Rush</h3>
                     </div>
                 </div>
                 <div class="tile is-parent" @click="opendetails">
-                    <div class="tile is-child box ripple center" >
-                        <h1 class="title test">PORTOFOLIO</h1>
+                    <div class="tile is-child box ripple center cf" >
+                        <h3 class="title test">CrossFire Next</h3>
                     </div>
                 </div>
             </div>
@@ -181,5 +181,29 @@
         background-image: url("https://media.giphy.com/media/I0MnQSOgLotk4/giphy.gif");
         background-size:cover;
         min-height:50px;
+    }
+    .rf{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/rf.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        color:#ffffff !important;
+    }
+    .rush{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/rush.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        color:#ffffff !important;
+    }
+    .cf{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/cf.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        color:#ffffff !important;
     }
 </style>
