@@ -1,8 +1,6 @@
 <template>
     <div id="mobile">
-        <div v-if="detaile">
-            <detaile/>
-        </div>
+        <detaile v-if="detaile"/>
         <div v-else class="container is-mobile">
             <div class="tile is-ancestor">
                 <div class="tile is-5 is-vertical is-parent">
@@ -41,11 +39,11 @@
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-3 is-vertical is-parent">
-                    <div class="tile is-child box center gifone ">
-
+                    <div class="tile is-child box center">
+                        <h1 class="title test underline"><i class="fab fa-github fa-2x"></i></h1>
                     </div>
                     <div class="tile is-child box center">
-                        <h1 class="title test underline"><i class="fas fa-map-marker-alt fa-lg"></i></h1>
+                        <h1 class="title test underline"><i class="fab fa-linkedin fa-2x"></i></h1>
                     </div>
                 </div>
                 <div class="tile is-parent" @click="opendetails">
@@ -74,6 +72,71 @@
                     </div>
                 </div>
             </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-5 is-vertical is-parent">
+                    <div class="tile is-child box center vmap">
+                        <h2 class="title test">VMap<br></h2>
+                        <p class="subtitle"></p>
+                    </div>
+                    <div class="tile is-child box center mblog">
+                        <h2 class="title test">Mobile Blog<br></h2>
+                        <p class="subtitle"></p>
+                    </div>
+                </div>
+                <div class="tile is-parent" @click="opendetails">
+                    <div class="tile is-child box center videolib">
+                        <h2 class="title test">Video Library<br></h2>
+                        <p class="subtitle"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <div class="tile is-child box center akr">
+                        <h2 class="title test">AKR<br></h2>
+                        <p class="subtitle"></p>
+                    </div>
+                </div>
+                <div class="tile is-parent" @click="opendetails">
+                    <div class="tile is-child box center aston">
+                        <h2 class="title test">Aston<br></h2>
+                        <p class="subtitle"></p>
+                    </div>
+                </div>
+                <div class="tile is-parent" @click="opendetails">
+                    <div class="tile is-child box center astra">
+                        <h2 class="title test">Astra<br></h2>
+                        <p class="subtitle"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <div class="tile is-child box">
+                        <section class="hero is-primary">
+                        <div class="hero-body">
+                            <div class="container">
+                                <p class="title">
+                                    Hidup itu seperti catur,ada hitam ada putih,dan di akhir tujuannya kita bisa menjadi apa saja
+                                </p>
+                                <p class="subtitle">
+                                    - Anonim
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="float" id="base">
+            <a class="button is-link" @click="floatclick"><i class="fas fa-phone fa-lg buttonfloat"></i></a>
+        </div>
+        <div class="float" id="whatsapp">
+            <a class="button is-link" @click="floatclick"><i class="fab fa-whatsapp fa-lg"></i></a>
+        </div>
+        <div class="float" id="mail">
+            <a class="button is-link" @click="floatclick"><i class="fa fa-at fa-lg"></i></a>
         </div>
     </div>
 </template>
@@ -81,12 +144,14 @@
 <script>
     import detaile from '@/components/details'
     import { mapState } from 'vuex'
+    import anime from 'animejs'
     export default {
         name: "Mobile",
         data(){
             return{
                 test: '',
                 zoom: false,
+                isopen:false
             }
         },
         computed: mapState([
@@ -95,12 +160,52 @@
         mounted(){
             ScrollReveal({ duration: 1000 })
             ScrollReveal().reveal('.tile')
+
         },
         methods:{
             opendetails(){
                 var data = "test123"
                 this.$store.commit('opendetails',data)
             },
+            floatclick(){
+                if(this.isopen){
+                    anime({
+                        targets: '.buttonfloat',
+                        rotate: 0,
+                        duration: 3000,
+                    })
+                    anime({
+                        targets: '#whatsapp',
+                        translateX: 0,
+                        opacity: [1,0],
+                    })
+                    anime({
+                        targets: '#mail',
+                        translateX: 0,
+                        opacity: [1,0],
+                    })
+                    this.isopen = !this.isopen
+                }else{
+                    anime({
+                        targets: '.buttonfloat',
+                        rotate: -360,
+                        duration: 3000,
+                    })
+                    anime({
+                        targets: '#whatsapp',
+                        translateX: -55,
+                        opacity: [0,1],
+                    })
+                    anime({
+                        targets: '#mail',
+                        opacity: [0,1],
+                        translateX: -110,
+                    })
+                    this.isopen = !this.isopen
+                }
+
+            },
+
         },
         components:{
             detaile
@@ -205,5 +310,69 @@
         -webkit-background-size: cover;
         background-size: cover;
         color:#ffffff !important;
+    }
+    .vmap{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/vmap.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        color:#ffffff !important;
+    }
+    .mblog{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/blogmobile.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        color:#ffffff !important;
+    }
+    .akr{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/akr.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        color:#ffffff !important;
+    }
+    .aston{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/aston.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        color:#ffffff !important;
+    }
+    .astra{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/astra.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        color:#ffffff !important;
+    }
+    .videolib{
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url("../assets/porto/video.png");
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        color:#ffffff !important;
+    }
+    .float{
+        position:fixed;
+        bottom:20px;
+        right:30px;
+        border-radius: 50%;
+        padding: 1em;
+        background-color:#209cee;
+        color:white;
+    }
+    #base{
+        z-index:2;
     }
 </style>
