@@ -1,7 +1,7 @@
 <template xmlns:width="http://www.w3.org/1999/xhtml">
     <div id="MyFirstSlideshow">
         <div class="eg-slideshow">
-            <slide class="local-eg-theme-one" enter='bounceInRight' leave='bounceOutRight'>
+            <slide :style="{backgroundColor: background()}" enter='bounceInRight' leave='bounceOutRight'>
                 <h2>Halooo Di sana ✌️<br>
                 Selamat Datang
                 </h2>
@@ -12,7 +12,7 @@
                     </div>
                 </eg-transition>
             </slide>
-            <slide class="local-eg-theme-two" enter='bounceInRight' leave='bounceOutRight' :steps=2>
+            <slide :style="{backgroundColor: background()}" enter='bounceInRight' leave='bounceOutRight' :steps=2>
                 <h3 class="second-title">Tunggu,Tunggu Dulu!!!  🖐️</h3>
                 <p class="center">Sebelum pengen tau lebih jauh,bolehkah daku mengetahui nama mu terlebih dahulu<br>
                     <input class="center" v-model='username'/>
@@ -31,7 +31,7 @@
                     </div>
                 </eg-transition>
             </slide>
-            <slide enter='fadeIn' class="local-eg-theme-three" :steps="2">
+            <slide :style="{backgroundColor: background()}" enter='fadeIn' class="local-eg-theme-three" :steps="2">
                 <h3 class="center second-title">
                     <img src="https://media.giphy.com/media/QQkyLVLAbQRKU/giphy.gif" />
                 </h3>
@@ -52,7 +52,7 @@
                     </div>
                 </eg-modal>
             </slide>
-            <slide :steps=2 enter='bounceInRight' leave='bounceOutRight'>
+            <slide :style="{backgroundColor: background()}" :steps=2 enter='bounceInRight' leave='bounceOutRight'>
 
                 <h3 class="second-title">Profil Diri 👨</h3>
                 <div class="columns">
@@ -77,7 +77,7 @@
 
                 <p  v-if='step >= 2'> Next Untuk Pengalaman Pekerjaan </p>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp'>
+            <slide  :style="{backgroundColor: background()}" enter='bounceInUp' leave='bounceOutUp'>
                 <h3 class="second-title">Pengalaman Pekerjaan 👨‍💻</h3>
                 <div style="overflow-y: scroll;overflow:visible" >
                     <div class="card" v-for="(item,key) in pekerjaan" v-bind:key="key" @click="opendetail(item)">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp' :steps=2>
+            <slide :style="{backgroundColor: background()}" enter='bounceInUp' leave='bounceOutUp' :steps=2>
                 <h3 class="second-title">Pengalaman Pekerjaan 👨‍💻</h3>
                 <div style="overflow-y: scroll;overflow:visible" >
                     <div class="card" v-for="(item,key) in pekerjaansecond" v-bind:key="key" @click="opendetail(item)">
@@ -105,7 +105,7 @@
                     </div>
                 </eg-modal>
             </slide>
-            <slide enter='bounceInDown' leave='bounceOutDown' :steps=2>
+            <slide :style="{backgroundColor: background()}" enter='bounceInDown' leave='bounceOutDown' :steps=2>
                 <h3 class="second-title">Pendidikan 👨‍🎓</h3>
                 <div style="overflow-y: scroll;overflow:visible" >
                     <div class="card" v-for="(item,key) in pendidikan" v-bind:key="key" @click="opendetail(item)">
@@ -122,7 +122,7 @@
                     </div>
                 </eg-modal>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutUp'>
+            <slide :style="{backgroundColor: background()}" enter='bounceInUp' leave='bounceOutUp'>
                 <h3 class="second-title">Skill 🏃 👨‍💻</h3>
                 <div class="columns">
                     <div class="column center">
@@ -183,7 +183,7 @@
                     </div>
                 </div>
             </slide>
-            <slide enter='bounceInUp' leave='bounceOutRight'>
+            <slide :style="{backgroundColor: background()}" enter='bounceInUp' leave='bounceOutRight'>
                 <h3 class="second-title">Skill  🏃</h3>
                 <div class="columns">
                     <div class="column">
@@ -197,7 +197,7 @@
                     </div>
                 </div>
             </slide>
-            <slide enter='bounceInRight' leave='bounceOutRight'>
+            <slide :style="{backgroundColor: background()}" enter='bounceInRight' leave='bounceOutRight'>
                 <h3 class="second-title">Skill  🏃</h3>
                 <div class="columns">
                     <div class="column">
@@ -245,7 +245,7 @@
                         </div>
                     </div>
             </slide>
-            <slide enter='bounceInLeft' leave='bounceOutLeft'>
+            <slide :style="{backgroundColor: background()}" enter='bounceInLeft' leave='bounceOutLeft'>
                 <h3 class="second-title">Skill  🏃</h3>
                 <div class="columns">
                     <div class="column">
@@ -257,7 +257,7 @@
                     </div>
                 </div>
             </slide>
-            <slide enter='bounceInRight' leave='bounceOutRight' :steps=2>
+            <slide :style="{backgroundColor: background()}" enter='bounceInRight' leave='bounceOutRight' :steps=2>
                 <h3 class="second-title">Tunggu Sebentar!!  🖐️</h3>
                 <div class="columns">
                     <p class="subtitle">Kita rehat sebentar dengan gambar" imut ini</p>
@@ -271,17 +271,17 @@
                     <p  v-if='step >= 2'> Lanjut? Lets Go  🏃 </p>
                 </eg-transition>
             </slide>
-            <slide enter='bounceInLeft' leave='bounceOutRight' :steps=2 :mouseNavigation='false'>
+            <slide :style="{backgroundColor: background()}" enter='bounceInLeft' leave='bounceOutRight' :steps=2 :mouseNavigation='false'>
                 <h3 class="second-title">Portofolio  🖐️</h3>
                 <eg-transition enter='bounceInLeft' leave='bounceOutLeft'>
                     <portofolio  v-if='step >= 2'/>
                 </eg-transition>
             </slide>
-            <slide enter='bounceInRight' leave='bounceOutLeft'  :mouseNavigation='false'>
+            <slide  :style="{backgroundColor: background()}"enter='bounceInRight' leave='bounceOutLeft'  :mouseNavigation='false'>
                 <h3 class="second-title">Katakan Haloo 🖐️</h3>
                 <credit/>
             </slide>
-            <slide enter='bounceInRight' leave='bounceOutLeft' :mouseNavigation='false'>
+            <slide :style="{backgroundColor: background()}" enter='bounceInRight' leave='bounceOutLeft' :mouseNavigation='false'>
                 <h4 class="second-title center">Sekian Dulu perkenalannya {{username}} 🖐️</h4>
                 <end/>
             </slide>
@@ -377,6 +377,25 @@
                     },
 
 
+                ],
+                color:[
+                    "#f44336",
+                    "#e91e63",
+                    "#9c27b0",
+                    "#673ab7",
+                    "#3f51b5",
+                    "#2196f3",
+                    "#03a9f4",
+                    "#00bcd4",
+                    "#009688",
+                    "#4caf50",
+                    "#8bc34a",
+                    "#cddc39",
+                    "#ffeb3b",
+                    "#ffc107",
+                    "#ff9800",
+                    "#ff7043",
+                    "#bcaaa4",
                 ]
             }
         },
@@ -397,6 +416,12 @@
                 this.detail = true
                 this.selecteddetail = data.jobDesc
             },
+            background(){
+                var min = 1;
+                var max = 16;
+                var randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                return this.color[randomnumber]
+            }
         }
 
     }
@@ -429,15 +454,8 @@
             background-image: none;
             color: #fff;
         }
-        .local-eg-theme-two {
-            background-color: #424e75;
-            background-image: none;
-            color: #fff;
-        }
-        .local-eg-theme-three {
-            background-color: #a65959;
-            background-image: none;
-            color: #fff;
+        #MyFirstSlideshow{
+            color:#ffffff;
         }
         .second-title{
             margin-top: 30px;

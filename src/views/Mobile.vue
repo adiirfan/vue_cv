@@ -4,11 +4,11 @@
         <div v-else class="container is-mobile">
             <div class="tile is-ancestor">
                 <div class="tile is-5 is-vertical is-parent">
-                    <div class="tile is-child box center ">
+                    <div class="tile is-child box center " :style="{backgroundColor: background()}">
                         <p class="title"></p>
                         <p class="test"> Adi Irfan Safrudin</p>
                     </div>
-                    <div class="tile is-child box profile">
+                    <div class="tile is-child box profile" :style="{backgroundColor: background()}">
                         <h1 class="title test">TENTANG SAYA</h1>
                     </div>
                 </div>
@@ -20,34 +20,34 @@
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-parent ">
-                    <article class="tile is-child box center">
+                    <article class="tile is-child box center" :style="{backgroundColor: background()}">
                         <h3 class="title test">PEKERJAAN</h3>
                         <p class="subtitle test "></p>
                     </article>
                 </div>
                 <div class="tile is-parent ">
-                    <article class="tile is-child box center">
+                    <article class="tile is-child box center" :style="{backgroundColor: background()}">
                         <h3 class="title test">PENDIDIKAN</h3>
                         <p class="subtitle test center"></p>
                     </article>
                 </div>
                 <div class="tile is-parent ">
-                    <article class="tile is-child box center">
+                    <article class="tile is-child box center" :style="{backgroundColor: background()}">
                         <h3 class="title test">SKILLS</h3>
                     </article>
                 </div>
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-3 is-vertical is-parent">
-                    <div class="tile is-child box center">
+                    <div class="tile is-child box center" :style="{backgroundColor: background()}">
                         <h1 class="title test underline"><i class="fab fa-github fa-2x"></i></h1>
                     </div>
-                    <div class="tile is-child box center">
+                    <div class="tile is-child box center" :style="{backgroundColor: background()}" >
                         <h1 class="title test underline"><i class="fab fa-linkedin fa-2x"></i></h1>
                     </div>
                 </div>
                 <div class="tile is-parent" @click="opendetails">
-                    <div class="tile is-child box ripple center" >
+                    <div class="tile is-child box ripple center" :style="{backgroundColor: background()}" >
                         <h1 class="title test">PORTOFOLIO</h1>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-parent">
-                    <div class="tile is-child box">
+                    <div class="tile is-child box" :style="{backgroundColor: background()}">
                         <section class="hero is-primary">
                         <div class="hero-body">
                             <div class="container">
@@ -151,7 +151,26 @@
             return{
                 test: '',
                 zoom: false,
-                isopen:false
+                isopen:false,
+                color:[
+                     "#f44336",
+                    "#e91e63",
+                    "#9c27b0",
+                    "#673ab7",
+                    "#3f51b5",
+                    "#2196f3",
+                    "#03a9f4",
+                    "#00bcd4",
+                    "#009688",
+                    "#4caf50",
+                    "#8bc34a",
+                   "#cddc39",
+                   "#ffeb3b",
+                    "#ffc107",
+                    "#ff9800",
+                   "#ff7043",
+                   "#bcaaa4",
+                ]
             }
         },
         computed: mapState([
@@ -205,6 +224,12 @@
                 }
 
             },
+            background(){
+                var min = 1;
+                var max = 16;
+                var randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                return this.color[randomnumber]
+            }
 
         },
         components:{
@@ -218,12 +243,12 @@
     #mobile{
         font-family: 'Noto Sans', sans-serif;
         font-size:.9rem;
+        color:#ffffff;
     }
     .box {
-        background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-        color: #4a4a4a;
+        color: #ffffff;
         display: block;
         padding: 0.75rem;
     }
