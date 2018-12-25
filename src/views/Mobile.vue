@@ -8,31 +8,31 @@
                         <p class="title"></p>
                         <p class="test"> Adi Irfan Safrudin</p>
                     </div>
-                    <div class="tile is-child box profile" :style="{backgroundColor: background()}">
+                    <div class="tile is-child box profile" :style="{backgroundColor: background()}" @click="opendetails('tentang')">
                         <h1 class="title test">TENTANG SAYA</h1>
                     </div>
                 </div>
-                <div class="tile is-parent " id="photo" @click="opendetails">
-                    <div class="tile is-child box photoframe ripple" >
-                        <!--img src="@/assets/photo.jpg" class="photo" /-->
+                <div class="tile is-parent " id="photo"  @click="opendetails('datadiri')">
+                    <div class="tile is-child box photoframe ripple center" >
+                        <h1 class="title test" style="text-align: center">Data Diri</h1>
                     </div>
                 </div>
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-parent ">
-                    <article class="tile is-child box center" :style="{backgroundColor: background()}">
+                    <article class="tile is-child box center" :style="{backgroundColor: background()}" @click="opendetails('job')">
                         <h3 class="title test">PEKERJAAN</h3>
                         <p class="subtitle test "></p>
                     </article>
                 </div>
                 <div class="tile is-parent ">
-                    <article class="tile is-child box center" :style="{backgroundColor: background()}">
+                    <article class="tile is-child box center" :style="{backgroundColor: background()}" @click="opendetails('edu')">
                         <h3 class="title test">PENDIDIKAN</h3>
                         <p class="subtitle test center"></p>
                     </article>
                 </div>
                 <div class="tile is-parent ">
-                    <article class="tile is-child box center" :style="{backgroundColor: background()}">
+                    <article class="tile is-child box center" :style="{backgroundColor: background()}" @click="opendetails('skills')">
                         <h3 class="title test">SKILLS</h3>
                     </article>
                 </div>
@@ -46,14 +46,14 @@
                         <h1 class="title test underline"><i class="fab fa-linkedin fa-2x"></i></h1>
                     </div>
                 </div>
-                <div class="tile is-parent" @click="opendetails">
+                <div class="tile is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box ripple center" :style="{backgroundColor: background()}" >
                         <h1 class="title test">PORTOFOLIO</h1>
                     </div>
                 </div>
             </div>
             <div class="tile is-ancestor">
-                <div class="tile is-parent" @click="opendetails">
+                <div class="tile is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box center rf">
                         <h2 class="title test">RF Online<br></h2>
                         <p class="subtitle"></p>
@@ -61,29 +61,29 @@
                 </div>
             </div>
             <div class="tile is-ancestor">
-                <div class="tile is-6 is-vertical is-parent">
+                <div class="tile is-6 is-vertical is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box center rush">
                         <h3 class="title test">Ragnarok Rush</h3>
                     </div>
                 </div>
-                <div class="tile is-parent" @click="opendetails">
+                <div class="tile is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box ripple center cf" >
                         <h3 class="title test">CrossFire Next</h3>
                     </div>
                 </div>
             </div>
             <div class="tile is-ancestor">
-                <div class="tile is-5 is-vertical is-parent">
+                <div class="tile is-5 is-vertical is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box center vmap">
                         <h2 class="title test">VMap<br></h2>
                         <p class="subtitle"></p>
                     </div>
-                    <div class="tile is-child box center mblog">
+                    <div class="tile is-child box center mblog" @click="opendetails('porto')">
                         <h2 class="title test">Mobile Blog<br></h2>
                         <p class="subtitle"></p>
                     </div>
                 </div>
-                <div class="tile is-parent" @click="opendetails">
+                <div class="tile is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box center videolib">
                         <h2 class="title test">Video Library<br></h2>
                         <p class="subtitle"></p>
@@ -92,18 +92,18 @@
             </div>
             <div class="tile is-ancestor">
                 <div class="tile is-parent">
-                    <div class="tile is-child box center akr">
+                    <div class="tile is-child box center akr" @click="opendetails('porto')">
                         <h2 class="title test">AKR<br></h2>
                         <p class="subtitle"></p>
                     </div>
                 </div>
-                <div class="tile is-parent" @click="opendetails">
+                <div class="tile is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box center aston">
                         <h2 class="title test">Aston<br></h2>
                         <p class="subtitle"></p>
                     </div>
                 </div>
-                <div class="tile is-parent" @click="opendetails">
+                <div class="tile is-parent" @click="opendetails('porto')">
                     <div class="tile is-child box center astra">
                         <h2 class="title test">Astra<br></h2>
                         <p class="subtitle"></p>
@@ -126,6 +126,14 @@
                         </div>
                     </section>
                     </div>
+                </div>
+                <div class="tile is-parent" @click="opendetails('porto')">
+                    <div class="tile is-child box center" :style="{backgroundColor: background()}">
+                        <a href="./assets/pdf/cv_adi_2018late.pdf" target="_blank" style="text-decoration: none;" >
+                            <p style="color:white">Download versi pdfnya disini 🖐</p>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -182,8 +190,7 @@
 
         },
         methods:{
-            opendetails(){
-                var data = "test123"
+            opendetails(data){
                 this.$store.commit('opendetails',data)
             },
             floatclick(){
@@ -254,7 +261,9 @@
     }
     .photoframe{
         display:flex;
-
+        background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45)),
+        url('../assets/photo.jpg');
         background-size:cover;
         vertical-align: center;
         align-items: center;
